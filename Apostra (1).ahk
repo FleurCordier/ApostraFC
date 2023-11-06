@@ -376,7 +376,7 @@ ScoreTextTPS := MyGui.AddText("xm section w200", "TPS-score:")
 ScoreEditTPS := MyGui.AddEdit("ys w200")
 
 ExternalControlsText := MyGui.AddText("xm section w200", "Externe/interne controles:")
-ExternalControlsCheckbox := MyGui.AddCheckbox("xm section w200 Checked", "Controles OK")
+ExternalControlsCheckbox := MyGui.AddCheckbox("xm section w200", "Controles OK")
 
 MyGui.AddButton("xm w50 h20 default", "OK").OnEvent("click", _PDL1ButtonOK)
 MyGui.Show()
@@ -498,7 +498,7 @@ if (ScoreEditTPS.Enabled and TPS_Score != "") {
 
         ; Generate the HTML output 
 		if (organ = "Long") {
-			html := "<b>Immuunhistochemie voor PD-L1 (" . FormatTime(,"dd/MM/yyyy") . ";" . Patholoog . ")</b><br>"
+			html := "<b>Immuunhistochemie voor PD-L1 (" . FormatTime(,"dd/MM/yyyy") . "; " . Patholoog . ")</b><br>"
 			html .= "<b>Locatie:</b> " organ "<br>"
 			html .= "<b>Techniek:</b> uitgevoerd met 22C3 antilichaam (Agilent) op het Benchmark Ultra toestel (Roche).<br>"
 			html .= "<b>Interpretatie:</b> " explanation "<br>"
@@ -506,7 +506,7 @@ if (ScoreEditTPS.Enabled and TPS_Score != "") {
 			html .= "<b>PD-L1 Score (22C3, Agilent):</b><br>"
 			html .= "- TPS = " . TPS_Score . "%.<br>"
 		} else {
-			html := "<b>Immuunhistochemie voor PD-L1 (" FormatTime(,"dd/MM/yyyy") ";" Patholoog ")" "</b><br>"
+			html := "<b>Immuunhistochemie voor PD-L1 (" FormatTime(,"dd/MM/yyyy") "; " Patholoog ")" "</b><br>"
 			html .= "<b>Locatie:</b> " organ "<br>"
 			html .= "<b>Techniek:</b> uitgevoerd met 22C3 antilichaam (Agilent) op het Benchmark Ultra toestel (Roche).<br>"
 			html .= "<b>Interpretatie:</b> " explanation "<br>"
